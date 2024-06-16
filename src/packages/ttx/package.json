@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "name": "@svg2colorfont/ttx",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@svg2colorfont/utils": "workspace:^",
+    "fast-xml-parser": "^4.4.0"
+  }
+}

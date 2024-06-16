@@ -26,6 +26,8 @@
   },
   "dependencies": {
     "@svg2colorfont/svg": "workspace:^",
-    "@svg2colorfont/ttx": "workspace:^"
+    "@svg2colorfont/svg2ttx": "workspace:^",
+    "@svg2colorfont/ttx": "workspace:^",
+    "@svg2colorfont/utils": "workspace:^"
   }
 }

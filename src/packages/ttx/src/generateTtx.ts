@@ -1,5 +1,10 @@
 import { XMLBuilder } from 'fast-xml-parser';
 
+export const generateTtx = (json: TtxGenerationProps): string => {
+    const builder = new XMLBuilder({ ignoreAttributes: false, suppressEmptyNode: true });
+    return builder.build(generateTemplate(json));
+};
+
 export type TtxGenerationProps = {
     subroutines: SubroutineCharString[];
     cffCharStrings: CffCharString[];
@@ -7,33 +12,28 @@ export type TtxGenerationProps = {
     colorGlyphs: ColorGlyph[];
 };
 
-export const generateTtx = (json: TtxGenerationProps) => {
-    const builder = new XMLBuilder({ ignoreAttributes: false, suppressEmptyNode: true });
-    return builder.build(generateTemplate(json));
-};
-
-type SubroutineCharString = {
+export type SubroutineCharString = {
     text: string;
     index: number;
 };
 
-type CffCharString = {
+export type CffCharString = {
     text: string;
     name: string;
 };
 
-type PaletteColor = {
+export type PaletteColor = {
     index: number;
     value: string;
 };
 
-type ColorGlyphLayer = {
-    colorId: number;
+export type ColorGlyph = {
+    layers: ColorGlyphLayer[];
     name: string;
 };
 
-type ColorGlyph = {
-    layers: ColorGlyphLayer[];
+export type ColorGlyphLayer = {
+    colorId: number;
     name: string;
 };
 
@@ -231,26 +231,26 @@ const generateTemplate = ({ subroutines, cffCharStrings, paletteColors, colorGly
         },
         'cmap': {
             tableVersion: { '@_version': '0' },
-            cmap_format_4: colorGlyphs.flatMap(({ name }, index) => {
-                const map = {
-                    '@_code': `0x${(parseInt('0xe000') + index).toString(16)}`,
-                    '@_name': name,
-                };
-                return [
-                    {
-                        map,
-                        '@_platformID': '0',
-                        '@_platEncID': '3',
-                        '@_language': '0',
-                    },
-                    {
-                        map,
-                        '@_platformID': '3',
-                        '@_platEncID': '1',
-                        '@_language': '0',
-                    },
-                ];
-            }),
+            cmap_format_4: [
+                {
+                    'map': colorGlyphs.map(({ name }, index) => ({
+                        '@_code': `0x${(parseInt('0xe000') + index).toString(16)}`,
+                        '@_name': name,
+                    })),
+                    '@_platformID': '0',
+                    '@_platEncID': '3',
+                    '@_language': '0',
+                },
+                {
+                    'map': colorGlyphs.map(({ name }, index) => ({
+                        '@_code': `0x${(parseInt('0xe000') + index).toString(16)}`,
+                        '@_name': name,
+                    })),
+                    '@_platformID': '3',
+                    '@_platEncID': '1',
+                    '@_language': '0',
+                },
+            ],
         },
         'post': {
             formatType: { '@_value': '3.0' },

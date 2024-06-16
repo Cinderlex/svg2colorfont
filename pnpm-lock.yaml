@@ -11,9 +11,15 @@ importers:
       '@svg2colorfont/svg':
         specifier: workspace:^
         version: link:src/packages/svg
+      '@svg2colorfont/svg2ttx':
+        specifier: workspace:^
+        version: link:src/packages/svg2ttx
       '@svg2colorfont/ttx':
         specifier: workspace:^
         version: link:src/packages/ttx
+      '@svg2colorfont/utils':
+        specifier: workspace:^
+        version: link:src/packages/utils
     devDependencies:
       '@eslint/js':
         specifier: ^9.4.0
@@ -72,6 +78,12 @@ importers:
       zod:
         specifier: ^3.23.8
         version: 3.23.8
+
+  src/packages/svg2ttx:
+    dependencies:
+      svg-pathdata:
+        specifier: ^6.0.3
+        version: 6.0.3
 
   src/packages/ttx:
     dependencies:
@@ -3342,6 +3354,11 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /svg-pathdata@6.0.3:
+    resolution: {integrity: sha512-qsjeeq5YjBZ5eMdFuUa4ZosMLxgr5RZ+F+Y1OrDhuOCEInRMA3x74XdBtggJcj9kOeInz0WE+LgCPDkZFlBYJw==}
+    engines: {node: '>=12.0.0'}
+    dev: false
 
   /synckit@0.8.8:
     resolution: {integrity: sha512-HwOKAP7Wc5aRGYdKH+dw0PRRpbO841v2DENBtjnR5HFWoiNByAl7vrx3p0G/rCyYXQsrxqtX48TImFtPcIHSpQ==}

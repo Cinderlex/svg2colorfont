@@ -1,13 +1,8 @@
-import { validateXml, XmlValidationError } from './validateXml.ts';
+import { parseXml, type XmlValidationError } from '@s2cf/xml';
 import { type Either, isLeft } from '@s2cf/utils';
-import { parseXml } from './parseXml.ts';
 import { parseSvg, type SvgParsingError, type SvgSchemaOutput } from './parseSvg.ts';
 
 export const parse = (data: string): Either<XmlValidationError | SvgParsingError, SvgSchemaOutput> => {
-    const validatedXml = validateXml(data);
-    if (isLeft(validatedXml)) {
-        return validatedXml;
-    }
-    const json = parseXml(data);
-    return parseSvg(json);
+    const xml = parseXml(data);
+    return isLeft(xml) ? xml : parseSvg(xml.right);
 };

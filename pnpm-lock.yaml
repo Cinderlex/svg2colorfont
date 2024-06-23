@@ -20,6 +20,9 @@ importers:
       '@s2cf/utils':
         specifier: workspace:^
         version: link:src/packages/utils
+      '@s2cf/xml':
+        specifier: workspace:^
+        version: link:src/packages/xml
     devDependencies:
       '@eslint/js':
         specifier: ^9.4.0
@@ -72,6 +75,9 @@ importers:
       '@s2cf/utils':
         specifier: workspace:^
         version: link:../utils
+      '@s2cf/xml':
+        specifier: workspace:^
+        version: link:../xml
       fast-xml-parser:
         specifier: ^4.4.0
         version: 4.4.0
@@ -95,6 +101,15 @@ importers:
         version: 4.4.0
 
   src/packages/utils: {}
+
+  src/packages/xml:
+    dependencies:
+      '@s2cf/utils':
+        specifier: workspace:^
+        version: link:../utils
+      fast-xml-parser:
+        specifier: ^4.4.0
+        version: 4.4.0
 
 packages:
 

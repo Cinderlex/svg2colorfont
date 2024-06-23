@@ -28,6 +28,7 @@
     "@s2cf/svg": "workspace:^",
     "@s2cf/svg2ttx": "workspace:^",
     "@s2cf/ttx": "workspace:^",
-    "@s2cf/utils": "workspace:^"
+    "@s2cf/utils": "workspace:^",
+    "@s2cf/xml": "workspace:^"
   }
 }

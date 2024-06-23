@@ -1,6 +1,7 @@
-import { parseSvg, SvgSchemaOutput, XmlValidationError } from '@s2cf/svg';
-import { Either, isLeft, right } from '@s2cf/utils';
-import { SvgParsingError } from '@s2cf/svg/src/parseSvg.ts';
+import { parseSvg, type SvgSchemaOutput } from '@s2cf/svg';
+import { type XmlValidationError } from '@s2cf/xml';
+import { type Either, isLeft, right } from '@s2cf/utils';
+import { type SvgParsingError } from '@s2cf/svg/src/parseSvg.ts';
 import { svgSchemaToTtx } from '@s2cf/svg2ttx';
 
 export const convertSvgsToTtx = (svgs: string[]): Either<XmlValidationError | SvgParsingError, string> => {

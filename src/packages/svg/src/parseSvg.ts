@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { type Either, type Json, left, right } from '@svg2colorfont/utils';
+import { type Either, type Json, left, right } from '@s2cf/utils';
 
 const LinearSize = z
     .string()

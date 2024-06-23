@@ -1,5 +1,5 @@
 import { validateXml } from './validateXml.ts';
-import { isLeft, isRight } from '@svg2colorfont/utils';
+import { isLeft, isRight } from '@s2cf/utils';
 
 describe('validateXml', () => {
     it('Should succeed on a valid xml', () => {

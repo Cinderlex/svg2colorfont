@@ -8,16 +8,16 @@ importers:
 
   .:
     dependencies:
-      '@svg2colorfont/svg':
+      '@s2cf/svg':
         specifier: workspace:^
         version: link:src/packages/svg
-      '@svg2colorfont/svg2ttx':
+      '@s2cf/svg2ttx':
         specifier: workspace:^
         version: link:src/packages/svg2ttx
-      '@svg2colorfont/ttx':
+      '@s2cf/ttx':
         specifier: workspace:^
         version: link:src/packages/ttx
-      '@svg2colorfont/utils':
+      '@s2cf/utils':
         specifier: workspace:^
         version: link:src/packages/utils
     devDependencies:
@@ -69,7 +69,7 @@ importers:
 
   src/packages/svg:
     dependencies:
-      '@svg2colorfont/utils':
+      '@s2cf/utils':
         specifier: workspace:^
         version: link:../utils
       fast-xml-parser:
@@ -87,7 +87,7 @@ importers:
 
   src/packages/ttx:
     dependencies:
-      '@svg2colorfont/utils':
+      '@s2cf/utils':
         specifier: workspace:^
         version: link:../utils
       fast-xml-parser:

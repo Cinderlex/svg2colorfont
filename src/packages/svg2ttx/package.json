@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@svg2colorfont/svg2ttx",
+  "name": "@s2cf/svg2ttx",
   "main": "src/index.ts",
   "dependencies": {
     "svg-pathdata": "^6.0.3"

@@ -1,4 +1,4 @@
-import { type Json } from '@svg2colorfont/utils';
+import { type Json } from '@s2cf/utils';
 import { XMLParser } from 'fast-xml-parser';
 
 export const parseXml = (data: string): Json => {

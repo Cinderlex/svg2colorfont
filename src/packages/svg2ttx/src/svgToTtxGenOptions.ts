@@ -1,5 +1,5 @@
-import { SvgSchemaOutput } from '@svg2colorfont/svg';
-import { ColorGlyphLayer, TtxGenerationProps } from '@svg2colorfont/ttx';
+import { SvgSchemaOutput } from '@s2cf/svg';
+import { ColorGlyphLayer, TtxGenerationProps } from '@s2cf/ttx';
 import { pathDataToCff } from './pathDataToCff.ts';
 import { pathToData } from './pathToData.ts';
 

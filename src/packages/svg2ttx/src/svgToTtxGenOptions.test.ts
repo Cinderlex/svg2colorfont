@@ -1,5 +1,5 @@
-import { SvgSchemaOutput } from '@svg2colorfont/svg';
-import { TtxGenerationProps } from '@svg2colorfont/ttx';
+import { SvgSchemaOutput } from '@s2cf/svg';
+import { TtxGenerationProps } from '@s2cf/ttx';
 import { svgToTtxGenOptions } from './svgToTtxGenOptions.ts';
 
 describe('svgToTtxGenOptions', () => {

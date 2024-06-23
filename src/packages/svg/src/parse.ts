@@ -1,5 +1,5 @@
 import { validateXml, XmlValidationError } from './validateXml.ts';
-import { type Either, isLeft } from '@svg2colorfont/utils';
+import { type Either, isLeft } from '@s2cf/utils';
 import { parseXml } from './parseXml.ts';
 import { parseSvg, type SvgParsingError, type SvgSchemaOutput } from './parseSvg.ts';
 

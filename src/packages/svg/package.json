@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "@svg2colorfont/svg",
+  "name": "@s2cf/svg",
   "main": "src/index.ts",
   "dependencies": {
-    "@svg2colorfont/utils": "workspace:^",
+    "@s2cf/utils": "workspace:^",
     "fast-xml-parser": "^4.4.0",
     "zod": "^3.23.8"
   }

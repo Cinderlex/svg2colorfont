@@ -1,5 +1,5 @@
 import { parseSvg } from './parseSvg.ts';
-import { isLeft, isRight } from '@svg2colorfont/utils';
+import { isLeft, isRight } from '@s2cf/utils';
 
 describe('parseSvg', () => {
     it('Should parse a valid svg', () => {

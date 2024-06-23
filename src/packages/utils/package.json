@@ -1,5 +1,5 @@
 {
   "private": true,
-  "name": "@svg2colorfont/utils",
+  "name": "@s2cf/utils",
   "main": "src/index.ts"
 }

@@ -1,5 +1,5 @@
 import { ValidationError, XMLValidator } from 'fast-xml-parser';
-import { type Either, left, right } from '@svg2colorfont/utils';
+import { type Either, left, right } from '@s2cf/utils';
 
 export type XmlValidationError = {
     readonly type: 'XmlValidationError';

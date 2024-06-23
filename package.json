@@ -25,9 +25,9 @@
     "vite": "^5.3.0"
   },
   "dependencies": {
-    "@svg2colorfont/svg": "workspace:^",
-    "@svg2colorfont/svg2ttx": "workspace:^",
-    "@svg2colorfont/ttx": "workspace:^",
-    "@svg2colorfont/utils": "workspace:^"
+    "@s2cf/svg": "workspace:^",
+    "@s2cf/svg2ttx": "workspace:^",
+    "@s2cf/ttx": "workspace:^",
+    "@s2cf/utils": "workspace:^"
   }
 }

@@ -14,9 +14,6 @@ importers:
       '@s2cf/svg2ttx':
         specifier: workspace:^
         version: link:src/packages/svg2ttx
-      '@s2cf/ttx':
-        specifier: workspace:^
-        version: link:src/packages/ttx
       '@s2cf/utils':
         specifier: workspace:^
         version: link:src/packages/utils
@@ -75,27 +72,24 @@ importers:
       '@s2cf/utils':
         specifier: workspace:^
         version: link:../utils
-      '@s2cf/xml':
-        specifier: workspace:^
-        version: link:../xml
-      fast-xml-parser:
-        specifier: ^4.4.0
-        version: 4.4.0
+      svg-pathdata:
+        specifier: ^6.0.3
+        version: 6.0.3
       zod:
         specifier: ^3.23.8
         version: 3.23.8
 
   src/packages/svg2ttx:
     dependencies:
-      svg-pathdata:
-        specifier: ^6.0.3
-        version: 6.0.3
+      '@s2cf/svg':
+        specifier: workspace:^
+        version: link:../svg
+      '@s2cf/ttx':
+        specifier: workspace:^
+        version: link:../ttx
 
   src/packages/ttx:
     dependencies:
-      '@s2cf/utils':
-        specifier: workspace:^
-        version: link:../utils
       fast-xml-parser:
         specifier: ^4.4.0
         version: 4.4.0

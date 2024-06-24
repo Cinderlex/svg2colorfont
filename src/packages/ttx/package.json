@@ -3,7 +3,6 @@
   "name": "@s2cf/ttx",
   "main": "src/index.ts",
   "dependencies": {
-    "@s2cf/utils": "workspace:^",
     "fast-xml-parser": "^4.4.0"
   }
 }

@@ -21,6 +21,7 @@ const SvgSchema = z.object({
 
 export type SvgSchemaInput = z.input<typeof SvgSchema>;
 export type SvgSchemaOutput = z.output<typeof SvgSchema>;
+export type ParsedSvg = SvgSchemaOutput['svg'];
 
 export type SvgSchemaError = z.ZodError<SvgSchemaInput>;
 
@@ -29,7 +30,7 @@ export type SvgParsingError = {
     readonly error: SvgSchemaError;
 };
 
-export const parseSvg = (data: Json): Either<SvgParsingError, SvgSchemaOutput> => {
+export const parseSvg = (data: Json): Either<SvgParsingError, ParsedSvg> => {
     const parsed = SvgSchema.safeParse(data);
-    return parsed.success ? right(parsed.data) : left({ type: 'SvgParsingError', error: parsed.error } as const);
+    return parsed.success ? right(parsed.data.svg) : left({ type: 'SvgParsingError', error: parsed.error } as const);
 };

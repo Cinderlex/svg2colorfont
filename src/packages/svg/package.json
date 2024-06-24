@@ -4,8 +4,7 @@
   "main": "src/index.ts",
   "dependencies": {
     "@s2cf/utils": "workspace:^",
-    "@s2cf/xml": "workspace:^",
-    "fast-xml-parser": "^4.4.0",
+    "svg-pathdata": "^6.0.3",
     "zod": "^3.23.8"
   }
 }

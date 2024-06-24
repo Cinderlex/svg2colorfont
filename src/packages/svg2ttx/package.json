@@ -3,6 +3,7 @@
   "name": "@s2cf/svg2ttx",
   "main": "src/index.ts",
   "dependencies": {
-    "svg-pathdata": "^6.0.3"
+    "@s2cf/svg": "workspace:^",
+    "@s2cf/ttx": "workspace:^"
   }
 }

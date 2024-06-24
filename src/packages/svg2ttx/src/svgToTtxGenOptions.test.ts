@@ -1,41 +1,125 @@
-import { SvgSchemaOutput } from '@s2cf/svg';
-import { TtxGenerationProps } from '@s2cf/ttx';
+import { SVGCommandTypes, type SvgGeometry } from '@s2cf/svg';
+import { type TtxGenerationProps } from '@s2cf/ttx';
 import { svgToTtxGenOptions } from './svgToTtxGenOptions.ts';
 
 describe('svgToTtxGenOptions', () => {
     it('Should convert svg to ttx generation options', () => {
-        const svgSchemas: SvgSchemaOutput[] = [
+        const svgSchemas: SvgGeometry[] = [
             {
-                svg: {
-                    '@_width': 960,
-                    '@_height': 960,
-                    'path': [
-                        {
-                            '@_fill': '#FFFF00',
-                            '@_d': 'v960h480v-960',
-                        },
-                        {
-                            '@_fill': '#0000FF',
-                            '@_d': 'm480,0v960h480v-960',
-                        },
-                    ],
-                },
+                width: 960,
+                height: 960,
+                path: [
+                    {
+                        fill: '#FFFF00',
+                        d: [
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.MOVE_TO,
+                                x: 0,
+                                y: 0,
+                            },
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.VERT_LINE_TO,
+                                y: 960,
+                            },
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.HORIZ_LINE_TO,
+                                x: 480,
+                            },
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.VERT_LINE_TO,
+                                y: -960,
+                            },
+                        ],
+                    },
+                    {
+                        fill: '#0000FF',
+                        d: [
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.MOVE_TO,
+                                x: 480,
+                                y: 0,
+                            },
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.VERT_LINE_TO,
+                                y: 960,
+                            },
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.HORIZ_LINE_TO,
+                                x: 480,
+                            },
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.VERT_LINE_TO,
+                                y: -960,
+                            },
+                        ],
+                    },
+                ],
             },
             {
-                svg: {
-                    '@_width': 960,
-                    '@_height': 960,
-                    'path': [
-                        {
-                            '@_fill': '#00FF00',
-                            '@_d': 'm0,480v480h960v-480',
-                        },
-                        {
-                            '@_fill': '#0000FF',
-                            '@_d': 'v480h960v-480',
-                        },
-                    ],
-                },
+                width: 960,
+                height: 960,
+                path: [
+                    {
+                        fill: '#00FF00',
+                        d: [
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.MOVE_TO,
+                                x: 0,
+                                y: 480,
+                            },
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.VERT_LINE_TO,
+                                y: 480,
+                            },
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.HORIZ_LINE_TO,
+                                x: 960,
+                            },
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.VERT_LINE_TO,
+                                y: -480,
+                            },
+                        ],
+                    },
+                    {
+                        fill: '#0000FF',
+                        d: [
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.MOVE_TO,
+                                x: 0,
+                                y: 0,
+                            },
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.VERT_LINE_TO,
+                                y: 480,
+                            },
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.HORIZ_LINE_TO,
+                                x: 960,
+                            },
+                            {
+                                relative: true,
+                                type: SVGCommandTypes.VERT_LINE_TO,
+                                y: -480,
+                            },
+                        ],
+                    },
+                ],
             },
         ];
         const resultOptions: TtxGenerationProps = {
@@ -44,12 +128,12 @@ describe('svgToTtxGenOptions', () => {
                 { name: 'glyph0.layer0', text: '0 0 rmoveto 960 vlineto 480 hlineto -960 vlineto endchar' },
                 {
                     name: 'glyph0.layer1',
-                    text: '0 0 rmoveto 480 0 rmoveto 960 vlineto 480 hlineto -960 vlineto endchar',
+                    text: '480 0 rmoveto 960 vlineto 480 hlineto -960 vlineto endchar',
                 },
                 { name: 'glyph0', text: 'endchar' },
                 {
                     name: 'glyph1.layer0',
-                    text: '0 0 rmoveto 0 480 rmoveto 480 vlineto 960 hlineto -480 vlineto endchar',
+                    text: '0 480 rmoveto 480 vlineto 960 hlineto -480 vlineto endchar',
                 },
                 { name: 'glyph1.layer1', text: '0 0 rmoveto 480 vlineto 960 hlineto -480 vlineto endchar' },
                 { name: 'glyph1', text: 'endchar' },

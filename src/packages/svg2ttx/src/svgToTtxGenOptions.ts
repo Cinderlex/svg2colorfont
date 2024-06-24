@@ -1,12 +1,11 @@
-import { SvgSchemaOutput } from '@s2cf/svg';
+import { SvgGeometry } from '@s2cf/svg';
 import { ColorGlyphLayer, TtxGenerationProps } from '@s2cf/ttx';
 import { pathDataToCff } from './pathDataToCff.ts';
-import { pathToData } from './pathToData.ts';
 
 /**
  * Currently assuming 960x960 svg with integer coordinates and specific subset of *relative* svg path commands
  */
-export const svgToTtxGenOptions = (svgs: SvgSchemaOutput[]): TtxGenerationProps => {
+export const svgToTtxGenOptions = (svgs: SvgGeometry[]): TtxGenerationProps => {
     const options: TtxGenerationProps = {
         subroutines: [],
         cffCharStrings: [],
@@ -17,13 +16,13 @@ export const svgToTtxGenOptions = (svgs: SvgSchemaOutput[]): TtxGenerationProps 
     svgs.forEach((svg, i) => {
         const glyphName = `glyph${i}`;
         const colorGlyphLayers: ColorGlyphLayer[] = [];
-        svg.svg.path.forEach((path, j) => {
+        svg.path.forEach((path, j) => {
             const layerName = `layer${j}`;
-            if (!palette.has(path['@_fill'])) {
-                palette.set(path['@_fill'], palette.size);
+            if (!palette.has(path.fill)) {
+                palette.set(path.fill, palette.size);
             }
-            const colorId = palette.get(path['@_fill'])!;
-            const pathData = pathToData(path['@_d']);
+            const colorId = palette.get(path.fill)!;
+            const pathData = path.d;
             const charString = pathDataToCff(pathData);
             const name = `${glyphName}.${layerName}`;
             options.cffCharStrings.push({ name, text: charString });

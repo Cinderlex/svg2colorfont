@@ -1,4 +1,4 @@
-import { generateTtx, TtxGenerationProps } from './generateTtx.ts';
+import { generateTtx, type TtxGenerationProps } from './generateTtx.ts';
 
 describe('generateXml', () => {
     it('Should generate a xml', () => {

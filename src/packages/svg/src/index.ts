@@ -1,2 +1,3 @@
-export { parse as parseSvg } from './parse.ts';
-export { type SvgSchemaError, type SvgSchemaOutput } from './parseSvg.ts';
+export { parse as parseSvg, type SvgGeometry } from './parse.ts';
+export { type SvgSchemaError } from './parseSvg.ts';
+export * from './SVGPathDataExports.ts';

@@ -1,2 +1,3 @@
 packages:
   - 'src/packages/*'
+  - 'src/packages/svg2ttx/src/packages/*'

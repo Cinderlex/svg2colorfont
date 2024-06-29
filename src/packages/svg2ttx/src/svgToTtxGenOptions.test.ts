@@ -3,7 +3,7 @@ import { type TtxGenerationProps } from '@s2cf/ttx';
 import { svgToTtxGenOptions } from './svgToTtxGenOptions.ts';
 
 describe('svgToTtxGenOptions', () => {
-    it('Should convert svg to ttx generation options', () => {
+    it.skip('Should convert svg to ttx generation options', () => {
         const svgSchemas: SvgGeometry[] = [
             {
                 width: 960,

@@ -1,10 +1,9 @@
 {
   "private": true,
-  "name": "@s2cf/svg2ttx",
+  "name": "@s2cf/svg-path2cff-charstring",
   "main": "src/index.ts",
   "dependencies": {
     "@s2cf/svg": "workspace:^",
-    "@s2cf/svg-path2cff-charstring": "workspace:^",
     "@s2cf/ttx": "workspace:^"
   }
 }

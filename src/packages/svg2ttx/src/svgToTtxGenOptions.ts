@@ -24,8 +24,9 @@ export const svgToTtxGenOptions = (svgs: SvgGeometry[]): TtxGenerationProps => {
             const colorId = palette.get(path.fill)!;
             const pathData = path.d;
             const charString = pathDataToCff(pathData);
+            const charStringSerialized = `${charString.map(v => v.serialize()).join(' ')} endchar`;
             const name = `${glyphName}.${layerName}`;
-            options.cffCharStrings.push({ name, text: charString });
+            options.cffCharStrings.push({ name, text: charStringSerialized });
             colorGlyphLayers.push({ name, colorId });
         });
         options.cffCharStrings.push({ name: glyphName, text: 'endchar' });

@@ -84,9 +84,21 @@ importers:
       '@s2cf/svg':
         specifier: workspace:^
         version: link:../svg
+      '@s2cf/svg-path2cff-charstring':
+        specifier: workspace:^
+        version: link:src/packages/svg-path2cff-charstring
       '@s2cf/ttx':
         specifier: workspace:^
         version: link:../ttx
+
+  src/packages/svg2ttx/src/packages/svg-path2cff-charstring:
+    dependencies:
+      '@s2cf/svg':
+        specifier: workspace:^
+        version: link:../../../../svg
+      '@s2cf/ttx':
+        specifier: workspace:^
+        version: link:../../../../ttx
 
   src/packages/ttx:
     dependencies:

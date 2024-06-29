@@ -12,6 +12,8 @@ export type {
     CommandA,
 } from 'svg-pathdata';
 
+export { SVGPathData, SVGPathDataTransformer } from 'svg-pathdata';
+
 export const SVGCommandTypes = {
     CLOSE_PATH: 1,
     MOVE_TO: 2,
